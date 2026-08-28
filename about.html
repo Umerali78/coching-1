@@ -4,82 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluentiq Academy — About</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="shortcut icon" href="/logo1.png" type="image/png" />
-
-    <!-- Yahan Loader ki Animation CSS add ki gayi hai -->
-    <style>
-        /* Preloader Container */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        /* Loader Box */
-        .loader {
-            text-align: center;
-        }
-
-        /* Logo Image */
-        .loader img {
-            width: 120px;
-            margin-bottom: 20px;
-            animation: pulseLogo 2s infinite ease-in-out;
-        }
-
-        /* Ring Animation */
-        .loader-ring {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #1a2a6c;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            animation: spin 1s linear infinite;
-        }
-
-        /* Loading Text */
-        .loader p {
-            font-family: 'Segoe UI', sans-serif;
-            color: #1a2a6c;
-            font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* Keyframes for Spin */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Keyframes for Logo Pulse */
-        @keyframes pulseLogo {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* Class to fade out preloader smoothly */
-        .hide-preloader {
-            opacity: 0;
-            pointer-events: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="logo1.png" type="image/png" />
 </head>
 <body>
 
     <div id="preloader">
         <div class="loader">
-            <img src="/logo1.png" alt="Fluentiq Academy" />
+            <img src="logo1.png" alt="Fluentiq Academy" />
             <div class="loader-ring"></div>
             <p>Loading...</p>
         </div>
@@ -88,7 +20,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="brand">
-                <img src="/logo1.png" alt="Logo" />
+                <img src="logo1.png" alt="Logo" />
                 <span>Fluentiq <span>Academy</span></span>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -176,7 +108,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="/logo1.png" alt="Logo" />
+                <img src="logo1.png" alt="Logo" />
                 <h3>Fluentiq <span>Academy</span></h3>
                 <p>Learn. Grow. Succeed.</p>
                 <div class="socials">
@@ -213,32 +145,50 @@
         <div class="footer-bottom">
             <p>© 2026 Fluentiq Academy. All Rights Reserved.</p>
         </div>
-        
     </footer>
 
-    <!-- JavaScript: Smoothly hide preloader -->
     <script>
+    // ================================================================
+    // BASIC NAVBAR & PRELOADER
+    // ================================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Preloader
         window.addEventListener('load', function() {
-            var preloader = document.getElementById('preloader');
-            if (preloader) {
-                // Pehle fade out class lagao
-                preloader.classList.add('hide-preloader');
-                
-                // 0.5 second baad display none kar do
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 500);
+            setTimeout(function() {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
 
-        // Hamburger Menu logic
-        var hamburger = document.getElementById('hamburger');
-        var navLinks = document.getElementById('navLinks');
-        if (hamburger && navLinks) {
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburger) {
             hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
+                navLinks.classList.toggle('open');
+                this.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
             });
         }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+                if (hamburger) hamburger.textContent = '☰';
+            });
+        });
+
+    });
     </script>
 
 </body>

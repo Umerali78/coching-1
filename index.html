@@ -1,43 +1,222 @@
-<script>
-// ================================================================
-// BASIC NAVBAR & PRELOADER
-// ================================================================
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Preloader
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            document.getElementById('preloader').classList.add('hidden');
-        }, 1000);
-    });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluentiq Academy — Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="logo1.png" type="image/png" />
+</head>
+<body>
 
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 80) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+    <div id="preloader">
+        <div class="loader">
+            <img src="logo1.png" alt="Fluentiq Academy" />
+            <div class="loader-ring"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="logo1.png" alt="Logo" />
+                <span>Fluentiq <span>Academy</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="language.html">🌍 Languages</a></li>
+                <li><a href="addmision.html">📝 Admission</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <span class="badge">🌟 Since 2016</span>
+            <h1>Build Your Future With <span>Fluentiq Academy</span></h1>
+            <p>Complete academic education for Classes 6th to 12th with expert guidance and a supportive learning environment.</p>
+            <div class="hero-buttons">
+                <a href="addmision.html" class="btn-primary">Apply Now →</a>
+                <a href="courses.html" class="btn-secondary">Explore Courses</a>
+            </div>
+            <div class="hero-stats">
+                <div><span>500+</span> Students</div>
+                <div><span>20+</span> Courses</div>
+                <div><span>10+</span> Years</div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="logo1.png" alt="Fluentiq Academy" />
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="section-header">
+            <span>Why Choose Us</span>
+            <h2>Why Fluentiq <span>Academy</span>?</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🎓</div>
+                <h3>Expert Teachers</h3>
+                <p>Qualified and experienced faculty dedicated to your success.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">📊</div>
+                <h3>Modern Curriculum</h3>
+                <p>Updated courses that prepare you for the future.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>Proven Results</h3>
+                <p>500+ students have achieved their academic goals with us.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Supportive Environment</h3>
+                <p>We care about every student's individual journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span>What Students Say</span>
+            <h2>Student <span>Testimonials</span></h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Fluentiq Academy changed my life! The teachers are amazing and I improved my grades dramatically."</p>
+                <div class="student">
+                    <span class="avatar">👤</span>
+                    <div><strong>Ali Ahmed</strong><small>Class X Student</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"The language courses are fantastic. I learned German in just 6 months and now I can speak fluently!"</p>
+                <div class="student">
+                    <span class="avatar">👤</span>
+                    <div><strong>Sarah Khan</strong><small>Language Student</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"The computer courses prepared me for freelancing. Now I earn while I learn. Highly recommended!"</p>
+                <div class="student">
+                    <span class="avatar">👤</span>
+                    <div><strong>Usman Malik</strong><small>IT Student</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start Your <span>Learning Journey</span>?</h2>
+            <p>Join 500+ students who are already building their future with us.</p>
+            <a href="addmision.html" class="btn-primary btn-large">Apply Now 🚀</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo1.png" alt="Logo" />
+                <h3>Fluentiq <span>Academy</span></h3>
+                <p>Learn. Grow. Succeed.</p>
+                <div class="socials">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">▶️</a>
+                    <a href="#">💬</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="language.html">Languages</a></li>
+                    <li><a href="addmision.html">Admission</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="courses.html">Academic</a></li>
+                    <li><a href="courses.html">Computer &amp; IT</a></li>
+                    <li><a href="language.html">Languages</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 Your City, Pakistan</p>
+                <p>📞 +92-XXX-XXXXXXX</p>
+                <p>✉️ info@fluentiqacademy.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Fluentiq Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // ================================================================
+    // BASIC NAVBAR & PRELOADER
+    // ================================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+                this.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+            });
         }
-    });
 
-    // Hamburger
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-            this.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+                if (hamburger) hamburger.textContent = '☰';
+            });
         });
-    }
 
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            navLinks.classList.remove('open');
-            if (hamburger) hamburger.textContent = '☰';
-        });
     });
+    </script>
 
-});
-</script>
+</body>
+</html>
